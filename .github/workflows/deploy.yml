@@ -10,10 +10,10 @@ env:
 jobs:
   test:
       env: 
-      MONGODB_CLUSTER_ADDRESS: cluster0.1zunijv.mongodb.net
-      MONGODB_USERNAME: sanjaypatel11284
-      MONGODB_PASSWORD: 6tg9YviwQjpZN7EA 
-      PORT: 8080   
+       MONGODB_CLUSTER_ADDRESS: cluster0.1zunijv.mongodb.net
+       MONGODB_USERNAME: sanjaypatel11284
+       MONGODB_PASSWORD: 6tg9YviwQjpZN7EA 
+       PORT: 8080   
       runs-on: ubuntu-latest
       steps:
       - name: Get Code
@@ -32,11 +32,11 @@ jobs:
       - name: Output information
         run: |
             echo "MONGODB_USERNAME: ${{ env.MONGODB_USERNAME }}"
-        
+  deploy:     
       needs: test
       runs-on: ubuntu-latest
-    steps:
-      - name: Output information
-        run: |        
-          echo "MONGODB_USERNAME: ${{env.MONGODB_USERNAME}}"
-          echo "MONGODB_DB_NAME: $MONGODB_DB_NAME"
+      steps: 
+        - name: Output information
+          run: |        
+             echo "MONGODB_USERNAME: ${{env.MONGODB_USERNAME}}"
+             echo "MONGODB_DB_NAME: $MONGODB_DB_NAME"
